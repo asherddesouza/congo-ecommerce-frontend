@@ -1,0 +1,161 @@
+.navbar {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.logo {
+  font-size: 52px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding: 18px;
+}
+
+.profileIcon {
+  border-radius: 25%;
+  height: 60px;
+  width: 60px;
+  border: 5px solid #2c8158;
+  margin: 16px;
+}
+
+.profileIcon:hover {
+  cursor: pointer;
+  -webkit-mask-image: linear-gradient(
+    -75deg,
+    rgba(236, 0, 0, 0.6) 30%,
+    #33ff00 50%,
+    rgba(43, 0, 255, 0.6) 70%
+  );
+  -webkit-mask-size: 200%;
+  animation: shine 2s infinite;
+}
+
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+
+  to {
+    -webkit-mask-position: -50%;
+  }
+}
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 30px;
+  border: none;
+  font-size: 18px;
+  border-radius: 25px 0px 0px 25px;
+  outline: none;
+  width: 300px;
+  align-content: flex-start;
+}
+
+.searchButton {
+  border: none;
+  padding: 10px 25px;
+  float: right;
+  border-radius: 0px 25px 25px 0px;
+  background-color: rgb(148, 81, 43);
+  color: white;
+  align-content: flex-start;
+}
+
+.searchButton:hover {
+  background-color: rgb(115, 62, 32);
+  cursor: pointer;
+}
+
+.searchBar:focus {
+  background-color: rgb(240, 240, 240);
+}
+
+.left {
+  justify-self: start;
+}
+
+.center {
+  justify-self: center;
+  display: flex;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 20px;
+}
+
+.right {
+  justify-self: end;
+  display: flex;
+  margin-right: 20px;
+  font-weight: bold;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.magnifyingGlass {
+  font-size: 2.5em;
+  display: inline-block;
+  width: 0.4em;
+  box-sizing: content-box;
+  height: 0.4em;
+  border: 0.1em solid rgb(255, 255, 255);
+  position: relative;
+  border-radius: 0.35em;
+  right: 2.5px;
+}
+
+.magnifyingGlass:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  right: -0.25em;
+  bottom: -0.1em;
+  border-width: 0;
+  background: rgb(255, 255, 255);
+  width: 0.35em;
+  height: 0.08em;
+  transform: rotate(45deg);
+}
+
+.basket {
+  border: 5px solid #2f9b67;
+  font-size: 18px;
+  margin: 22px 18px 18px 18px;
+  padding: 8px;
+}
+
+.basket:hover {
+  border: 5px solid #2c8158;
+}
+
+.basketIcon {
+  color: #139077;
+  font-size: 20px;
+  font-weight: bolder;
+  width: 35px;
+  display: inline-block;
+  line-height: 0.85;
+  margin-left: 5px;
+  text-align: center;
+}
+
+.basketIcon:before {
+  border-top: 29px solid #ffffff;
+  border-left: 4px solid rgba(0, 0, 0, 0);
+  border-right: 4px solid rgba(0, 0, 0, 0);
+  height: 0;
+  width: 29px;
+  content: "";
+  display: inline-block;
+  margin-right: -3px;
+  margin-bottom: -24px;
+}
+
+.divider {
+  border-left: 3px solid rgb(13, 108, 0);
+  height: 85px;
+  margin: 10px;
+}
