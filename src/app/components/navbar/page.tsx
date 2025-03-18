@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./page.module.css";
+import Link from "next/link";
 import { Kablammo } from "next/font/google";
 
 const kablammo = Kablammo({ subsets: ["latin"] });
@@ -9,7 +10,7 @@ export default function Navbar() {
     <div>
       <ul className={styles.navbar}>
         <li className={`${styles.logo} ${styles.left} ${kablammo.className}`}>
-          <a href="/">Congo</a>
+          <Link href="/">Congo</Link>
         </li>
         <li className={`${styles.center}`}>
           <input
@@ -22,16 +23,16 @@ export default function Navbar() {
           </button>
         </li>
         <li className={`${styles.right}`}>
-          <a href="/basket" className={styles.basket}>
+          <Link href="/basket" className={styles.basket}>
             Basket: <i className={`${styles.basketIcon}`}>0</i>
-          </a>
+          </Link>
           <div className={styles.divider} />
-          <a className={`${styles.profile}`} href="/profile">
+          <Link className={`${styles.profile}`} href="/profile">
             <img
               className={`${styles.profileIcon}`}
               src="resources/profile-images/grey-profile-icon.png"
             />
-          </a>
+          </Link>
         </li>
       </ul>
     </div>

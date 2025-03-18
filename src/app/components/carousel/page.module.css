@@ -1,0 +1,66 @@
+.carousel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 10px;
+  margin: 50px 15% 10px 15%;
+  gap: 20px;
+}
+
+.carouselSlide0 {
+  background-color: #ddffee;
+  background-image: linear-gradient(
+    to right,
+    rgba(205, 92, 0, 0),
+    rgb(98, 65, 35)
+  );
+}
+
+.carouselSlide1 {
+  background-color: #aaffd5;
+  background-image: linear-gradient(
+    to right,
+    rgba(205, 92, 0, 0),
+    rgb(169, 103, 129)
+  );
+}
+
+.carouselSlide2 {
+  background-color: #a5ffe8;
+  background-image: linear-gradient(to right, rgba(205, 92, 0, 0), #00363f);
+}
+
+.carouselContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #2f9b67;
+}
+
+.description {
+  font-size: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+
+.right {
+  justify-self: end;
+  padding: 15px;
+}
+
+.image {
+  height: 180px;
+  width: 180px;
+}

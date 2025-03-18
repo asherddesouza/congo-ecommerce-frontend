@@ -1,0 +1,28 @@
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.dot {
+  background-color: #3cd58b;
+  color: white;
+  padding: 10px;
+  border-radius: 10000px;
+  border-style: solid;
+  height: 5px;
+  width: 5px;
+}
+
+.dot:active {
+  background-color: #00965f;
+}
+
+.dotSelected {
+  background-color: #007248;
+}
+
+.dot:hover {
+  cursor: pointer;
+}
