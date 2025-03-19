@@ -30,7 +30,7 @@ export default function Navbar() {
           <Link className={`${styles.profile}`} href="/profile">
             <img
               className={`${styles.profileIcon}`}
-              src="resources/profile-images/grey-profile-icon.png"
+              src="../resources/profile-images/grey-profile-icon.png"
             />
           </Link>
         </li>
