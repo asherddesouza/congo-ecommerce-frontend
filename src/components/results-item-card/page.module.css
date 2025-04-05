@@ -1,0 +1,60 @@
+.itemCard {
+  display: flex;
+  padding: 20px;
+  border: 5px solid #008e3b;
+  border-radius: 10px;
+  box-shadow: 0 0 200px rgba(0, 0, 0, 0.1);
+  background-color: #cfebc8;
+  margin-bottom: 40px;
+}
+
+.itemCardInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.quantity {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.basketButton {
+  background-color: #2f9b67;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.basketButton:hover {
+  background-color: #007248;
+}
+
+.deleteButton:hover {
+  background-color: #b70000;
+}
+
+.quantityDropdown {
+  padding: 10px 10px;
+  border: 4px solid #008e3b;
+  border-radius: 10px;
+}
+
+.price {
+  font-size: 32px;
+  font-weight: bold;
+  color: #274637;
+}

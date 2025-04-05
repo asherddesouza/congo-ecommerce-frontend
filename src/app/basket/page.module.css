@@ -11,7 +11,7 @@
 
 .basketLayout {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 3fr 1fr 1fr;
 }
 
 .checkoutButton {
@@ -33,7 +33,7 @@
 
 .divider {
   border-left: 3px solid rgb(13, 108, 0);
-  height: 100%;
+  height: 100px;
   margin-right: 20px;
   justify-self: end;
 }
@@ -41,7 +41,4 @@
 .productList {
   display: grid;
   gap: 20px;
-}
-
-.basketItem {
 }

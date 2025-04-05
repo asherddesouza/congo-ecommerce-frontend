@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import styles from "./page.module.css";
-import Navbar from "./components/navbar/page";
-import CarouselSlide from "./components/carousel/page";
-import CarouselSwitcher from "@/app/components/carousel-switcher/page";
-import PopularCategories from "@/app/components/popular-categories/page";
+import Navbar from "../components/navbar/page";
+import CarouselSlide from "../components/carousel/page";
+import CarouselSwitcher from "@/components/carousel-switcher/page";
+import PopularCategories from "@/components/popular-categories/page";
 
 export default function Home() {
   const [currentCarouselSelected, setCurrentCarouselSelected] = useState(0);

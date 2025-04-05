@@ -1,6 +1,7 @@
 import React from "react";
-import Navbar from "../components/navbar/page";
+import Navbar from "../../components/navbar/page";
 import styles from "./page.module.css";
+import BasketItemCard from "../../components/basket-item-card/page";
 
 export default function Basket() {
   const count = 3;
@@ -12,9 +13,9 @@ export default function Basket() {
         <div className={styles.title}>Basket</div>
         <div className={styles.basketLayout}>
           <div className={styles.productList}>
-            <div className={styles.basketItem}>Item 1</div>
-            <div className={styles.basketItem}>Item 2</div>
-            <div className={styles.basketItem}>Item 3</div>
+            <BasketItemCard />
+            <BasketItemCard />
+            <BasketItemCard />
           </div>
           <div className={styles.divider} />
           <div className={styles.checkout}>
