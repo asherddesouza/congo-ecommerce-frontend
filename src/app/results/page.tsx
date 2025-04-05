@@ -8,7 +8,7 @@ export default function Results() {
     <div>
       <Navbar />
       <div className={styles.results}>
-        <div className={styles.title}>3 results for "phone"</div>
+        <div className={styles.title}>3 results for phone</div>
         <ResultsItemCard />
         <ResultsItemCard />
         <ResultsItemCard />

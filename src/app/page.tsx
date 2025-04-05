@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import styles from "./page.module.css";
 import Navbar from "../components/navbar/page";
 import CarouselSlide from "../components/carousel/page";
 import CarouselSwitcher from "@/components/carousel-switcher/page";

@@ -23,8 +23,7 @@ export default function DeleteAccount() {
             className={styles.formInput}
           />
           <div>
-            Type 'CONFIRM' in this box if you're sure you want to delete your
-            account!
+            Type CONFIRM in this box if you really want to delete your account.
           </div>
           <input
             name="query"
