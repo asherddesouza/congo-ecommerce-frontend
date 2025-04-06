@@ -1,48 +1,28 @@
-"use client";
+"use server";
 
-import { useState } from "react";
-import Navbar from "../components/navbar/page";
-import CarouselSlide from "../components/carousel/page";
-import CarouselSwitcher from "@/components/carousel-switcher/page";
-import PopularCategories from "@/components/popular-categories/page";
+import Home from "./page.client";
 
-export default function Home() {
-  const [currentCarouselSelected, setCurrentCarouselSelected] = useState(0);
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+const getSomeData = async () => {
+  try {
+    let data = await fetch(`${API_URL}/home`);
+    let testData = await data.json();
+    return testData;
+
+    console.log("Data fetched from API:", testData);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+};
+
+export default async function Index() {
+  const data = await getSomeData();
+  console.log(`type: ${typeof data}`);
 
   return (
     <div>
-      <Navbar />
-      {currentCarouselSelected === 0 && (
-        <CarouselSlide
-          title="Congo"
-          description="Your one-stop online shop!"
-          imagePath="resources/images/congo-hero-banner.png"
-          getCurrentCarouselSelected={currentCarouselSelected}
-        />
-      )}
-      {currentCarouselSelected === 1 && (
-        <CarouselSlide
-          title="Perfumes"
-          description="Browse our exclusive range here!"
-          imagePath="resources/images/perfumes-banner.png"
-          getCurrentCarouselSelected={currentCarouselSelected}
-        />
-      )}
-      {currentCarouselSelected === 2 && (
-        <CarouselSlide
-          title="Phones"
-          description="Find the phone that meets your needs!"
-          imagePath="resources/images/phones-banner.png"
-          getCurrentCarouselSelected={currentCarouselSelected}
-        />
-      )}
-      <CarouselSwitcher
-        setCurrentCarouselSelected={setCurrentCarouselSelected}
-        getCurrentCarouselSelected={currentCarouselSelected}
-      />
-
-      <PopularCategories />
-      <footer>© Asher De Souza 2025</footer>
+      <Home fetchData={data.message} />;
     </div>
   );
 }
