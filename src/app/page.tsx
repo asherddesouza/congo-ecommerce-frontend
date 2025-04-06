@@ -6,8 +6,8 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const getSomeData = async () => {
   try {
-    let data = await fetch(`${API_URL}/home`);
-    let testData = await data.json();
+    const data = await fetch(`${API_URL}/home`);
+    const testData = await data.json();
     return testData;
 
     console.log("Data fetched from API:", testData);
@@ -18,7 +18,7 @@ const getSomeData = async () => {
 
 export default async function Index() {
   const data = await getSomeData();
-  console.log(`type: ${typeof data}`);
+  console.log(`type: ${typeof data.message}`);
 
   return (
     <div>

@@ -6,10 +6,8 @@ import CarouselSlide from "../components/carousel/page";
 import CarouselSwitcher from "@/components/carousel-switcher/page";
 import PopularCategories from "@/components/popular-categories/page";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
-
 interface HomeProps {
-  fetchData: any;
+  fetchData: string;
 }
 
 export default function Home({ fetchData }: HomeProps) {
