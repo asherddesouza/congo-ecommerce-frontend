@@ -8,3 +8,14 @@
   color: #2f9b67;
   margin-bottom: 50px;
 }
+
+.results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.noResults {
+  font-size: 20px;
+  color: #2f9b67;
+}

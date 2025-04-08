@@ -4,25 +4,47 @@ import Home from "./page.client";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-const getSomeData = async () => {
+const getAllUsers = async () => {
   try {
-    const data = await fetch(`${API_URL}/home`);
+    const data = await fetch(`${API_URL}/users`);
     const testData = await data.json();
-    return testData;
-
     console.log("Data fetched from API:", testData);
+    return testData;
   } catch (error) {
     console.error("Error fetching data:", error);
   }
 };
 
+// const createNewUser = async () => {
+//   const user = {
+//     uuid: "d3a3db5a-2e4e-4a5c-b9e9-8c7841c18c43",
+//     name: "Asher",
+//     email: "emailaddress",
+//     password: "pwd",
+//   };
+
+//   try {
+//     const data = await fetch(`${API_URL}/users`, {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(user),
+//     });
+
+//     return data;
+//   } catch (error) {
+//     console.error("Error creating user:", error);
+//   }
+// };
+
 export default async function Index() {
-  const data = await getSomeData();
-  console.log(`type: ${typeof data.message}`);
+  const getUsers = await getAllUsers();
+  // const createUser = await createNewUser();
 
   return (
     <div>
-      <Home fetchData={data.message} />;
+      <Home fetchData={getUsers.message} />;
     </div>
   );
 }

@@ -1,17 +1,25 @@
 import React from "react";
 import styles from "./page.module.css";
 
-export default function ResultsItemCard() {
+export interface ResultsItemCardProps {
+  data: {
+    name: string;
+    description: string;
+    price: number;
+    quantity: number;
+    category: string[];
+    imageUrl: string;
+  };
+}
+
+export default function ResultsItemCard({ data }: ResultsItemCardProps) {
   return (
     <div className={styles.itemCard}>
-      <img
-        className={styles.image}
-        src="resources/images/congo-hero-banner.png"
-      />
+      <img className={styles.image} src={data.imageUrl} />
       <div className={styles.itemCardInfo}>
-        <div>Product Name</div>
-        <div className={styles.price}>£24.99</div>
-        <div>Description</div>
+        <div className={styles.title}>{data.name}</div>
+        <div className={styles.price}>{data.price}</div>
+        <div>{data.description}</div>
         <div className={styles.quantity}>
           <select
             name="quantity"

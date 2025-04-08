@@ -8,6 +8,12 @@
   margin-bottom: 40px;
 }
 
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #274637;
+}
+
 .itemCardInfo {
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -11,7 +11,7 @@ export default function PopularCategories() {
       <div className={styles.category}>Watches</div>
       <div className={styles.category}>Keyboards</div>
       <div className={styles.category}>Laptops</div>
-      <div className={styles.category}>Video Games</div>
+      <div className={styles.category}>Gaming</div>
     </div>
   );
 }
