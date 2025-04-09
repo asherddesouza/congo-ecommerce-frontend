@@ -21,9 +21,10 @@ const getResults = async (searchQuery: string) => {
 export default async function ResultsPage({
   searchParams,
 }: {
-  searchParams: { query: string };
+  searchParams: Promise<{ query: string }>; // Treat searchParams as a Promise
 }) {
-  const searchQuery = searchParams.query || ""; // Get the search query from the URL
+  const resolvedSearchParams = await searchParams; // Resolve the Promise
+  const searchQuery = resolvedSearchParams.query || ""; // Get the search query from the resolved object
   const results = await getResults(searchQuery); // Fetch results on the server
 
   return <Results results={results} searchQuery={searchQuery} />;
