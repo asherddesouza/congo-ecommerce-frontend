@@ -12,10 +12,10 @@ interface HomeProps {
 
 export default function Home({ fetchData }: HomeProps) {
   const [currentCarouselSelected, setCurrentCarouselSelected] = useState(0);
+  console.log("fetchData", fetchData);
 
   return (
     <div>
-      <div>Server Message: {fetchData}</div>
       <Navbar />
       {currentCarouselSelected === 0 && (
         <CarouselSlide
@@ -31,6 +31,7 @@ export default function Home({ fetchData }: HomeProps) {
           description="Browse our exclusive range here!"
           imagePath="resources/images/perfumes-banner.png"
           getCurrentCarouselSelected={currentCarouselSelected}
+          redirectRequest="perfumes"
         />
       )}
       {currentCarouselSelected === 2 && (
@@ -39,6 +40,7 @@ export default function Home({ fetchData }: HomeProps) {
           description="Find the phone that meets your needs!"
           imagePath="resources/images/phones-banner.png"
           getCurrentCarouselSelected={currentCarouselSelected}
+          redirectRequest="phones"
         />
       )}
       <CarouselSwitcher

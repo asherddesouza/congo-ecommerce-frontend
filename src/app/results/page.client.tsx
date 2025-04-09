@@ -7,34 +7,33 @@ import ResultsItemCard from "../../components/results-item-card/page";
 import { ResultsItemCardProps } from "../../components/results-item-card/page";
 
 interface ResultsProps {
-  results: Array<ResultsItemCardProps>;
-  query: string;
+  results: ResultsItemCardProps[];
+  searchQuery: string;
 }
 
-export default function Results({ results, query }: ResultsProps) {
-  const itemData = {
-    name: "PlayStation 5",
-    description: "The latest gaming console from Sony.",
-    price: 499.99,
-    quantity: 5,
-    category: ["Gaming", "Electronics"],
-    imageUrl:
-      "https://m.media-amazon.com/images/I/818zyNJnfLL._AC_UY436_FMwebp_QL65_.jpg",
-  };
-
-  // figger out how to map this so that all the results are displayed
-
+export default function Results({ results, searchQuery }: ResultsProps) {
   return (
     <div>
       <Navbar />
       <div className={styles.results}>
         <div className={styles.title}>
-          {results.length != undefined ? results.length : `No`}{" "}
-          {results.length != 1 ? `results` : `result`} for {query}
+          {results.length !== undefined ? results.length : `No`}{" "}
+          {results.length !== 1 ? `results` : `result`} for{" "}
+          {searchQuery ? `"${searchQuery}"` : `all items`}
         </div>
         <div className={styles.resultsList}>
           {results.length > 0 ? (
-            <ResultsItemCard data={itemData} />
+            results.map((item, index) => (
+              <ResultsItemCard
+                key={index}
+                name={item.name}
+                description={item.description}
+                price={item.price}
+                quantity={item.quantity}
+                category={item.category}
+                imageUrl={item.imageUrl}
+              />
+            ))
           ) : (
             <div className={styles.noResults}>Try a different search term?</div>
           )}

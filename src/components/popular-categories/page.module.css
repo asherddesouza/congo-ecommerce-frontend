@@ -24,15 +24,20 @@
   color: #1c3c2d;
   font-weight: 900;
   cursor: pointer;
+  text-decoration: none;
+  background-color: #35ad73;
+  color: white;
+  padding: 10px 15px;
+  border-color: transparent;
+  border-radius: 25px;
 }
 
 .showAll:hover {
-  color: #007248;
-  text-decoration: underline;
+  background-color: #006540;
 }
 
 .category {
-  padding: 30px 0px;
+  padding: 30px 70px;
   font-size: 24px;
   background-color: #35ad73;
   margin: 15px 0px;
@@ -40,9 +45,17 @@
   color: white;
   text-align: center;
   font-weight: bolder;
+  text-decoration: none;
 }
 
 .category:hover {
   background-color: #007248;
   cursor: pointer;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 20px;
 }

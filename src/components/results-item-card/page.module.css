@@ -9,9 +9,16 @@
 }
 
 .title {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: bold;
   color: #274637;
+  margin-right: 25px;
+}
+
+.description {
+  font-size: 16px;
+  align-self: start;
+  margin-right: 25px;
 }
 
 .itemCardInfo {
@@ -25,9 +32,9 @@
 
 .image {
   width: 150px;
-  height: 150px;
+  height: 200px;
   border-radius: 10px;
-  margin-right: 20px;
+  margin-right: 30px;
 }
 
 .quantity {

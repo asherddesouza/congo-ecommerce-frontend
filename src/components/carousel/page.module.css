@@ -64,3 +64,8 @@
   height: 180px;
   width: 180px;
 }
+
+.link {
+  all: unset;
+  cursor: pointer;
+}

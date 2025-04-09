@@ -1,35 +1,30 @@
 "use server";
 
+import React from "react";
 import Results from "./page.client";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-const getResults = async (searchParam: string) => {
+const getResults = async (searchQuery: string) => {
   try {
-    const data = await fetch(
-      `${API_URL}/items?search=${encodeURIComponent(searchParam)}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
+    const response = await fetch(
+      `${API_URL}/items?search=${encodeURIComponent(searchQuery)}`
     );
-    return data.json();
+    const data = await response.json();
+    return data;
   } catch (error) {
-    console.error("Error fetching data:", error);
+    console.error("Error fetching results:", error);
+    return [];
   }
 };
 
-export default async function Index() {
-  const searchParam = "PS5";
+export default async function ResultsPage({
+  searchParams,
+}: {
+  searchParams: { query: string };
+}) {
+  const searchQuery = searchParams.query || ""; // Get the search query from the URL
+  const results = await getResults(searchQuery); // Fetch results on the server
 
-  const data = await getResults(searchParam);
-  console.log("Search Results", data);
-
-  return (
-    <div>
-      <Results results={data} query={searchParam} />
-    </div>
-  );
+  return <Results results={results} searchQuery={searchQuery} />;
 }

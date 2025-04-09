@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
+import Form from "next/form";
 import { Kablammo } from "next/font/google";
 
 const kablammo = Kablammo({ subsets: ["latin"] });
@@ -13,14 +14,19 @@ export default function Navbar() {
           <Link href="/">Congo</Link>
         </li>
         <li className={`${styles.center}`}>
-          <input
-            className={styles.searchBar}
-            type="text"
-            placeholder="Search Congo..."
-          />
-          <button type="submit" className={styles.searchButton}>
-            <div className={styles.magnifyingGlass}></div>
-          </button>
+          <Form className={styles.form} action="/results">
+            <label>
+              <input
+                className={styles.searchBar}
+                type="text"
+                name="query"
+                placeholder="Search Congo..."
+              />
+            </label>
+            <button type="submit" className={styles.searchButton}>
+              <div className={styles.magnifyingGlass}></div>
+            </button>
+          </Form>
         </li>
         <li className={`${styles.right}`}>
           <Link href="/basket" className={styles.basket}>

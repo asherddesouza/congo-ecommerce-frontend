@@ -2,24 +2,29 @@ import React from "react";
 import styles from "./page.module.css";
 
 export interface ResultsItemCardProps {
-  data: {
-    name: string;
-    description: string;
-    price: number;
-    quantity: number;
-    category: string[];
-    imageUrl: string;
-  };
+  name: string;
+  description: string;
+  price: number;
+  quantity: number;
+  category: string[];
+  imageUrl: string;
 }
 
-export default function ResultsItemCard({ data }: ResultsItemCardProps) {
+export default function ResultsItemCard({
+  name,
+  description,
+  price,
+  quantity,
+  category,
+  imageUrl,
+}: ResultsItemCardProps) {
   return (
     <div className={styles.itemCard}>
-      <img className={styles.image} src={data.imageUrl} />
+      <img className={styles.image} src={imageUrl} />
       <div className={styles.itemCardInfo}>
-        <div className={styles.title}>{data.name}</div>
-        <div className={styles.price}>{data.price}</div>
-        <div>{data.description}</div>
+        <div className={styles.title}>{name}</div>
+        <div className={styles.price}>£{price}</div>
+        <div className={styles.description}>{description}</div>
         <div className={styles.quantity}>
           <select
             name="quantity"

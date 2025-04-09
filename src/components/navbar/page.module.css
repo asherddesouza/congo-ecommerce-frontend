@@ -159,3 +159,15 @@
   height: 85px;
   margin: 10px;
 }
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 30px;
+  border: none;
+  font-size: 18px;
+  border-radius: 25px 0px 0px 25px;
+  outline: none;
+  width: 300px;
+}

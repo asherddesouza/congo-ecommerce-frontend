@@ -1,11 +1,14 @@
 import React from "react";
 import styles from "./page.module.css";
+import Form from "next/form";
+import Link from "next/link";
 
 interface CarouselSlideProps {
   title: string;
   description: string;
   imagePath: string;
   getCurrentCarouselSelected: number;
+  redirectRequest?: string;
 }
 
 export default function Carousel({
@@ -13,14 +16,15 @@ export default function Carousel({
   description,
   imagePath,
   getCurrentCarouselSelected,
+  redirectRequest,
 }: CarouselSlideProps) {
-  return (
+  const content = (
     <div className={styles.carouselContainer}>
       <div
         className={`${styles.carousel} ${
           styles[`carouselSlide${getCurrentCarouselSelected}`]
         }
-        }`}
+      }`}
       >
         <div className={styles.left}>
           <div className={`${styles.title}`}>{title}</div>
@@ -31,5 +35,13 @@ export default function Carousel({
         </div>
       </div>
     </div>
+  );
+
+  return redirectRequest ? (
+    <Link className={styles.link} href={`/results?query=${redirectRequest}`}>
+      {content}
+    </Link>
+  ) : (
+    content
   );
 }
