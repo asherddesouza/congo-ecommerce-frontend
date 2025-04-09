@@ -6,7 +6,6 @@ export interface ResultsItemCardProps {
   description: string;
   price: number;
   quantity: number;
-  category: string[];
   imageUrl: string;
 }
 
@@ -15,9 +14,10 @@ export default function ResultsItemCard({
   description,
   price,
   quantity,
-  category,
   imageUrl,
 }: ResultsItemCardProps) {
+  console.log("quantity", quantity);
+
   return (
     <div className={styles.itemCard}>
       <img className={styles.image} src={imageUrl} />
