@@ -28,7 +28,9 @@ export const updateBasket = async (
 };
 
 export const getBasket = async (): Promise<BasketItemCardProps[]> => {
+  console.log(`API_URL: ${API_URL}`);
   try {
+    console.log("Fetching basket from:", `${API_URL}/basket`);
     const response = await fetch(`${API_URL}/basket`, {
       method: "GET",
       headers: {
@@ -41,15 +43,16 @@ export const getBasket = async (): Promise<BasketItemCardProps[]> => {
     }
 
     const data: BasketItemCardProps[] = await response.json();
-    console.log("Successfully fetched basket:", data);
+    console.log("Basket data:", data);
     return data;
   } catch (error) {
     console.error("Error fetching basket:", error);
-    return []; // Return an empty array as a fallback
+    return [];
   }
 };
 
 export const clearBasket = async () => {
+  console.log(`API_URL: ${API_URL}`);
   try {
     const response = await fetch(`${API_URL}/basket/clear`, {
       method: "POST",
