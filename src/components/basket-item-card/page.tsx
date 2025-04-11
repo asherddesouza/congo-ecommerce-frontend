@@ -2,8 +2,6 @@
 
 import React, { useState } from "react";
 import styles from "./page.module.css";
-import { redirect } from "next/navigation";
-import Form from "next/form";
 import { useRouter } from "next/navigation";
 
 import { updateBasket } from "@/app/basket/page";
@@ -27,9 +25,8 @@ export default function BasketItemCard({
   category,
   imageUrl,
 }: BasketItemCardProps) {
-  // console.log("quantity", quantity);
-  // console.log("category", category);
-  // console.log("description", description);
+  console.log("category", category);
+  console.log("description", description);
 
   const router = useRouter();
   const [selectedQuantity, setSelectedQuantity] = useState<number>(1);
@@ -47,11 +44,14 @@ export default function BasketItemCard({
 
   const handleDeleteFromBasket = async () => {
     try {
+      setLoading(true);
       const response = await updateBasket(uuid, 0);
       console.log("Response from updateBasket:", response);
       router.push("/basket");
     } catch (error) {
       console.error("Error updating basket:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -94,7 +94,7 @@ export default function BasketItemCard({
           onClick={handleDeleteFromBasket}
           disabled={loading}
         >
-          {loading ? "Deleting" : "Remove from Basket"}
+          {loading ? "Removing..." : "Remove from Basket"}
         </button>
       </div>
     </div>

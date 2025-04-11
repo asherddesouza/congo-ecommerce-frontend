@@ -2,18 +2,18 @@
 
 import Home from "./page.client";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+// const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-const getAllUsers = async () => {
-  try {
-    const data = await fetch(`${API_URL}/users`);
-    const testData = await data.json();
-    console.log("Data fetched from API:", testData);
-    return testData;
-  } catch (error) {
-    console.error("Error fetching data:", error);
-  }
-};
+// const getAllUsers = async () => {
+//   try {
+//     const data = await fetch(`${API_URL}/users`);
+//     const testData = await data.json();
+//     console.log("Data fetched from API:", testData);
+//     return testData;
+//   } catch (error) {
+//     console.error("Error fetching data:", error);
+//   }
+// };
 
 // const createNewUser = async () => {
 //   const user = {

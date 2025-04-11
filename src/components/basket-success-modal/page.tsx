@@ -1,7 +1,6 @@
 import styles from "./page.module.css";
 import { useRouter } from "next/navigation";
 import { clearBasket } from "@/app/basket/page";
-import { clear } from "console";
 
 interface BasketSuccessModalProps {
   subtotal: number;
