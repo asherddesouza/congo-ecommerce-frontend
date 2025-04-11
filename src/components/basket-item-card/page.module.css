@@ -14,6 +14,7 @@
   flex-grow: 1;
   align-items: center;
   justify-content: center;
+  gap: 20px;
 }
 
 .image {
@@ -26,14 +27,22 @@
 .quantity {
   display: flex;
   gap: 10px;
+  align-self: end;
+  margin-left: 120px;
+}
+
+.quantityContainer {
+  margin-top: 10px;
+  display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 .confirmButton {
   background-color: #2f9b67;
   color: white;
   border: none;
-  padding: 10px 15px;
+  padding: 13px 15px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -49,6 +58,7 @@
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  text-align: center;
 }
 
 .deleteButton:hover {
@@ -59,4 +69,29 @@
   padding: 10px 10px;
   border: 4px solid #008e3b;
   border-radius: 10px;
+}
+
+.name {
+  color: #00682b;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.price {
+  color: #00682b;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.basketQuantity {
+  color: #00682b;
+  font-size: 20px;
+  font-weight: bold;
+  align-self: center;
+  margin-left: 10px;
+}
+
+.info {
+  display: flex;
+  text-align: center;
 }

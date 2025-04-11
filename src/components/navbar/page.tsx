@@ -30,7 +30,7 @@ export default function Navbar() {
         </li>
         <li className={`${styles.right}`}>
           <Link href="/basket" className={styles.basket}>
-            Basket: <i className={`${styles.basketIcon}`}>0</i>
+            Basket
           </Link>
           <div className={styles.divider} />
           <Link className={`${styles.profile}`} href="/profile">

@@ -33,7 +33,7 @@
 
 .divider {
   border-left: 3px solid rgb(13, 108, 0);
-  height: 100px;
+  height: 150px;
   margin-right: 20px;
   justify-self: end;
 }
@@ -41,4 +41,11 @@
 .productList {
   display: grid;
   gap: 20px;
+}
+
+.totalPrice {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0b281a;
+  margin-top: 20px;
 }

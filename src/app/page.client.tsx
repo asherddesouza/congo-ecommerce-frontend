@@ -12,7 +12,7 @@ interface HomeProps {
 
 export default function Home({ fetchData }: HomeProps) {
   const [currentCarouselSelected, setCurrentCarouselSelected] = useState(0);
-  console.log("fetchData", fetchData);
+  // console.log("fetchData", fetchData);
 
   return (
     <div>

@@ -39,12 +39,14 @@ const getAllUsers = async () => {
 // };
 
 export default async function Index() {
-  const getUsers = await getAllUsers();
+  // const getUsers = await getAllUsers();
   // const createUser = await createNewUser();
+
+  const getUsers = "test";
 
   return (
     <div>
-      <Home fetchData={getUsers.message} />;
+      <Home fetchData={getUsers} />;
     </div>
   );
 }

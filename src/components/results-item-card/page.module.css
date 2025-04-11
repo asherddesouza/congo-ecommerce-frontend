@@ -47,9 +47,10 @@
   background-color: #2f9b67;
   color: white;
   border: none;
-  padding: 10px 15px;
+  padding: 13px 15px;
   border-radius: 5px;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 .basketButton:hover {

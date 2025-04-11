@@ -125,6 +125,7 @@
   font-size: 18px;
   margin: 22px 18px 18px 18px;
   padding: 8px;
+  align-content: center;
 }
 
 .basket:hover {

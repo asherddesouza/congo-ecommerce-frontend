@@ -4,7 +4,7 @@ import React from "react";
 import Navbar from "../../components/navbar/page";
 import styles from "./page.module.css";
 import ResultsItemCard from "../../components/results-item-card/page";
-import { ResultsItemCardProps } from "../../components/results-item-card/page";
+import { ResultsItemCardProps } from "../../components/results-item-card/page.client";
 
 interface ResultsProps {
   results: ResultsItemCardProps[];
@@ -26,6 +26,7 @@ export default function Results({ results, searchQuery }: ResultsProps) {
             results.map((item, index) => (
               <ResultsItemCard
                 key={index}
+                uuid={item.uuid}
                 name={item.name}
                 description={item.description}
                 price={item.price}
