@@ -59,7 +59,7 @@ Additionally, I tried to limit against SQL injection attacks by using the Sequel
 If I had implemented the ability for a user to register/login, I would have used hashing instead of encryption because if a hacker ever got access to the encryption key, they could decrypt all passwords.
 
 I would have hashed passwords before storing them into the database. Hashing is a one-way operation, so even if attackers got the hashed passwords they couldn't do anything with them.
-I would have used the bcrypt library to hash passwords as soon as a user inputs them, that way nobody except for the user knows
+I would have used the bcrypt library to hash passwords as soon as a user inputs them, that way nobody except for the user knows their password. As well as this, to prevent against rainbow table attacks (because hashes can be reversed), I would also have salted each hashed password with a unique salt `(bcrypt.hash(password, 10))` so that each hash is unique, even if two passwords are the same.
 
 # Installation and Usage Instructions
 
