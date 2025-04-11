@@ -6,8 +6,6 @@ export default function Index({
   name,
   description,
   price,
-  quantity,
-  category,
   imageUrl,
 }: ResultsItemCardProps) {
   return (
@@ -17,8 +15,6 @@ export default function Index({
         name={name}
         description={description}
         price={price}
-        quantity={quantity}
-        category={category}
         imageUrl={imageUrl}
       />
     </div>

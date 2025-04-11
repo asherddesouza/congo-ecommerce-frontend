@@ -49,10 +49,8 @@ export default function Basket({ results }: BasketProps) {
                   key={index}
                   uuid={item.uuid}
                   name={item.name}
-                  description={item.description}
                   price={item.price}
                   quantity={item.quantity}
-                  category={item.category}
                   imageUrl={item.imageUrl}
                 />
               ))

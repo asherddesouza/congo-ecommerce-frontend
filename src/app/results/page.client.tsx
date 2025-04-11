@@ -30,8 +30,6 @@ export default function Results({ results, searchQuery }: ResultsProps) {
                 name={item.name}
                 description={item.description}
                 price={item.price}
-                quantity={item.quantity}
-                category={item.category}
                 imageUrl={item.imageUrl}
               />
             ))

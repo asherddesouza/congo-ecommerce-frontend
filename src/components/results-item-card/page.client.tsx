@@ -8,8 +8,6 @@ export interface ResultsItemCardProps {
   name: string;
   description: string;
   price: number;
-  quantity: number;
-  category: string;
   imageUrl: string;
 }
 
@@ -18,13 +16,8 @@ export default function ResultsItemCard({
   name,
   description,
   price,
-  quantity,
-  category,
   imageUrl,
 }: ResultsItemCardProps) {
-  console.log("quantity", quantity);
-  console.log("category", category);
-
   const [selectedQuantity, setSelectedQuantity] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
 

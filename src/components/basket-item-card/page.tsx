@@ -9,25 +9,18 @@ import { updateBasket } from "@/app/basket/basketUtils";
 export interface BasketItemCardProps {
   uuid: string;
   name: string;
-  description: string;
   price: number;
   quantity: number;
-  category: string;
   imageUrl: string;
 }
 
 export default function BasketItemCard({
   uuid,
   name,
-  description,
   price,
   quantity,
-  category,
   imageUrl,
 }: BasketItemCardProps) {
-  console.log("category", category);
-  console.log("description", description);
-
   const router = useRouter();
   const [selectedQuantity, setSelectedQuantity] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
@@ -79,7 +72,7 @@ export default function BasketItemCard({
               onClick={handleAddToBasket}
               disabled={loading}
             >
-              {loading ? "Confirming..." : "Confirm"}
+              Confirm
             </button>
           </div>
         </div>
