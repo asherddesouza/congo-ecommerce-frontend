@@ -7,8 +7,6 @@ import BasketItemCard from "../../components/basket-item-card/page";
 import { BasketItemCardProps } from "../../components/basket-item-card/page";
 import BasketSuccessModal from "@/components/basket-success-modal/page";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
-
 interface BasketProps {
   results: BasketItemCardProps[];
 }
@@ -37,8 +35,6 @@ export default function Basket({ results }: BasketProps) {
   const completeOrder = async () => {
     setShowBasketSuccessModal(true);
   };
-
-  console.log(`API_URL: ${API_URL}`);
 
   return (
     <div>

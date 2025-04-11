@@ -1,13 +1,8 @@
 import Basket from "./page.client";
 import { getBasket } from "@/app/basket/basketUtils";
 
-export default async function Index() {
+export default async function BasketPage() {
   const data = await getBasket();
-  console.log("Basket data:", data);
 
-  return (
-    <div>
-      <Basket results={data} />
-    </div>
-  );
+  return <Basket results={data} />;
 }
