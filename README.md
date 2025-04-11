@@ -8,9 +8,6 @@
 
 # Disclaimer
 
-At the time of submission, not all intended features made it into the final product, and some features are working locally but not on the live application.
-
-- In the live webapp, it's not possible to view items that have been added to the basket, meaning that you cannot checkout as well. This is due to a bug discovered late in development but too close to the deadline to resolve. The webapp works as expected when running the site locally, as evidenced in the video.
 - I also intended to add user login and registration to the app but was unable to due to time constraints. However, I will discuss briefly some of the decisions that I would have made during development if I had added login/registration.
 
 # Introduction
@@ -67,7 +64,11 @@ I also prevent against XSS attacks by using `httpOnly:true` in my middleware to 
 
 ### Deployment
 
-To host the PostgreSQL database, I used a Render instance so that the database could be accessed by both the frontend and the backend
+To host the PostgreSQL database, I used a Render instance so that the database could be accessed by both the frontend and the backend of Congo.
+
+To host the backend of Congo, I also used Render which allowed me to set environment variables on the server itself.
+
+To host the frontend, I used Vercel because they also own Next.js so my assumption was that development would be simpler.
 
 # Installation and Usage Instructions
 
@@ -114,10 +115,73 @@ In the backend repository, I set `DATABASE_URL` as my external database URL and 
 
 # Feature Overview
 
+### Home (src/app/page.client.tsx)
+
+![alt text](image-3.png)
+
+The first page a user will land on is the Home page. Here, users can click through various categories which will redirect a user to the results page. Users can also access the navbar from here and all other pages, the Navbar's core functionality giving users the ability to search for items, as well as view their baskets.
+
+![alt text](image-4.png)
+
+The code for the homepage is held on the root of the `/app` folder, and although there is both a `page.tsx` file and a `page.client.tsx` there isn't a need for separation here because there are no server calls being made here.
+
+### Navbar (src/app/components/navbar/page.client.tsx)
+
+![alt text](image-5.png)
+
+The navbar component acts as a 'gateway' between different parts of the website. It's visible on every page, so it provides a way to always be able to search for new items or visit the basket.
+
+![alt text](image-6.png)
+
+The main functionality of the navbar comes from the Form component which is wrapped around the searchbar. This component allows the user's input to be used a searchQuery which is then passed onto the results page when that's rendered.
+
+### Results (src/app/results)
+
+The results page is the first page where we can see an API call being made to the backend.
+
+| Frontend                 | Backend API              |
+| ------------------------ | ------------------------ |
+| ![alt text](image-7.png) | ![alt text](image-8.png) |
+
+In this code comparison, we can see that getResults calls the API with the searchQuery that was received from the form in the Navbar component. On the backend side, we can see that some processing is done and that we look for all the items in the database that match with the user's search term on either name, description or category.
+
+### Basket (src/app/basket)
+
+The basket was the most crucial part of the app to build. Without it, users would just be virtually window shopping! There are three functions in the basket that make API calls directly, and these functions are called by other components within their Server components so that they can get the data they need.
+
+| Frontend                  | Backend API               |
+| ------------------------- | ------------------------- |
+| ![alt text](image-9.png)  | ![alt text](image-12.png) |
+| ![alt text](image-10.png) | ![alt text](image-13.png) |
+| ![alt text](image-11.png) | ![alt text](image-14.png) |
+
+These functions allow the user to add items to their basket, clear their baskets and most importantly get their baskets so that they can be seen on the `/basket` page.
+
+### After API call processing
+
+![alt text](image-15.png)
+
+### Final result
+
+![alt text](image-16.png)
+
+Even after the items come back from the API call, we still need to do some processing so that we can present the numbers that we receive from the DB back in a 'nice' format.
+
+![alt text](image-17.png)
+
+Also, I used a modal instead of a page to 'confirm' the user's order. This was done because otherwise they'd have to be returned straight to the homepage without a warning and that's not a good user experience.
+
 # Issues & future enhancements
 
-- could have done caching
+- To improve performance further, I could have cached some requests from the server so that they would be loaded in faster the next time the API call was made.
+- I would have liked to have added a register/login function to Congo, which would have allowed users to sign up for accounts, edit their details, change their password and delete their accounts
+- A known bug is that technically, users can complete transactions with nothing in their baskets
+- I wanted to add functionality such that the carousel on the homepage automatically cycles through the different slides to improve the user experience by exposing them to more products
+- On the results page, images are formatted strangely because all images are squashed to conform to a 2:1 ratio
+- If given more time, I would've added greater accessibility support through the use of aria labels so that screen readers can more effectively project content
 
 # References
 
-ai tools
+While developing, I used GitHub Copilot primarily as a tool to predict what I was going to type and do it faster than I could've done it. As well as this, I used its' built-in chat feature in VS Code to help me debug when I didn't know how to approach the solution to a problem.
+
+I did not use any AI to write this README.

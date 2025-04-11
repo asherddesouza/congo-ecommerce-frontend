@@ -13,7 +13,6 @@ interface BasketProps {
 
 export const getTotalItems = (results: BasketItemCardProps[]) => {
   return results.reduce((total: number, item: BasketItemCardProps) => {
-    // console.log(total + item.quantity);
     return total + item.quantity;
   }, 0);
 };
@@ -21,10 +20,8 @@ export const getTotalItems = (results: BasketItemCardProps[]) => {
 const getTotalPrice = (results: BasketItemCardProps[]) => {
   return results.reduce((total: number, item: BasketItemCardProps) => {
     const itemTotal = item.price * item.quantity; // Calculate total for the current item
-    // console.log(
-    //   `Item: ${item.name}, Price: ${item.price}, Quantity: ${item.quantity}, Item Total: ${itemTotal}`
-    // );
-    return total + itemTotal; // Add the item's total to the cumulative total
+
+    return total + itemTotal;
   }, 0);
 };
 
