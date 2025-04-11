@@ -1,5 +1,7 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+"use server";
+
 import { BasketItemCardProps } from "../../components/basket-item-card/page";
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export const updateBasket = async (
   itemUUID: string,

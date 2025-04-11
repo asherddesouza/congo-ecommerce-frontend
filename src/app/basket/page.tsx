@@ -1,5 +1,5 @@
 import Basket from "./page.client";
-import { getBasket } from "./basketUtils";
+import { getBasket } from "@/app/basket/basketUtils";
 
 export default async function Index() {
   const data = await getBasket();
