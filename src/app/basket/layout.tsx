@@ -1,13 +1,16 @@
-// import { getBasket } from "@/app/basket/basketUtils";
+import { getBasket } from "@/app/basket/basketUtils";
+import { BasketProvider } from "./basketContext";
 
-export default function BasketLayout({
+export default async function BasketLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const basketData = await getBasket(); // Fetch the basket data
+
   return (
-    <div>
+    <BasketProvider basketData={basketData}>
       <main>{children}</main>
-    </div>
+    </BasketProvider>
   );
 }

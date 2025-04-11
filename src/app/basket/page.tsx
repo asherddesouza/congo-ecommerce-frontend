@@ -1,8 +1,10 @@
+"use client";
+
 import Basket from "./page.client";
-import { getBasket } from "@/app/basket/basketUtils";
+import { useBasket } from "./basketContext";
 
-export default async function BasketPage() {
-  const data = await getBasket();
+export default function BasketPage() {
+  const { basketData } = useBasket(); // Access the basket data from context
 
-  return <Basket results={data} />;
+  return <Basket results={basketData} />;
 }
