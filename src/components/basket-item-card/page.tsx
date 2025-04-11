@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import styles from "./page.module.css";
 import { useRouter } from "next/navigation";
 
-import { updateBasket } from "@/app/basket/page";
+import { updateBasket } from "@/app/basket/basketUtils";
 
 export interface BasketItemCardProps {
   uuid: string;

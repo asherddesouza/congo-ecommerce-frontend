@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./page.module.css";
 
-import { updateBasket } from "@/app/basket/page";
+import { updateBasket } from "@/app/basket/basketUtils";
 
 export interface ResultsItemCardProps {
   uuid: string;
