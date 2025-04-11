@@ -28,7 +28,6 @@ export const updateBasket = async (
 };
 
 export const getBasket = async (): Promise<BasketItemCardProps[]> => {
-  console.log(`API_URL: ${API_URL}`);
   try {
     console.log("Fetching basket from:", `${API_URL}/basket`);
     const response = await fetch(`${API_URL}/basket`, {
