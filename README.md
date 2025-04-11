@@ -61,7 +61,13 @@ If I had implemented the ability for a user to register/login, I would have used
 I would have hashed passwords before storing them into the database. Hashing is a one-way operation, so even if attackers got the hashed passwords they couldn't do anything with them.
 I would have used the bcrypt library to hash passwords as soon as a user inputs them, that way nobody except for the user knows their password. As well as this, to prevent against rainbow table attacks (because hashes can be reversed), I would also have salted each hashed password with a unique salt `(bcrypt.hash(password, 10))` so that each hash is unique, even if two passwords are the same.
 
-CSRF attacks trick users into making unwanted requests on a web application where they're authenticated. I set sameSite: "Strict" in the session cookies on the express server to ensure that cookies aren't sent with cross-site requests, which blocks unauthorized actions initiated from other domains.
+CSRF attacks trick users into making unwanted requests on a web application where they're authenticated. I set `sameSite: "Strict"` in the session cookies on the express server to ensure that cookies aren't sent with cross-site requests, which blocks unauthorized actions initiated from other domains.
+
+I also prevent against XSS attacks by using `httpOnly:true` in my middleware to prevent JS from accessing the session cookie and thereby making it harder for hackers to steal auth tokens.
+
+### Deployment
+
+To host the PostgreSQL database, I used a Render instance so that the database could be accessed by both the frontend and the backend
 
 # Installation and Usage Instructions
 

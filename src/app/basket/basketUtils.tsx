@@ -1,5 +1,3 @@
-"use server";
-
 import { BasketItemCardProps } from "../../components/basket-item-card/page";
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
